@@ -4,6 +4,7 @@ import circle from '../assets/circle.svg';
 import java from '../assets/java.png';
 import node from '../assets/node.png';
 import react from '../assets/react.png';
+import about from '../assets/about.png';
 
 export default {
   logo,
@@ -11,5 +12,6 @@ export default {
   circle,
   java,
   node,
-  react
+  react,
+  about
 }
