@@ -82,7 +82,7 @@
 }
 
 .app__skills-exp {
-  flex: 1;
+  flex: 3;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -126,7 +126,7 @@
 }
 
 .app__skills-exp-year {
-  margin-right: 3rem;
+  width: 150px;
 
   p {
     font-weight: 800;

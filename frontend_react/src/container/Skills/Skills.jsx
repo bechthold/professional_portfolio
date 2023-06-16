@@ -17,6 +17,11 @@ const Skills = () => {
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
+      data.sort(
+        (a, b) =>
+          Number(b.year.split(' ')[0]) -
+          Number(a.year.split(' ')[0]));
+
       setExperiences(data);
     });
 
@@ -31,12 +36,12 @@ const Skills = () => {
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.name}
+              key={'A' + index}
             >
               <div
                 className="app__flex"
@@ -49,16 +54,16 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
+          {experiences.map((experience, index) => (
             <motion.div
               className="app__skills-exp-item"
-              key={experience.year}
+              key={'B' + index}
             >
               <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
+                <p className="bold-text app__experience-year">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
+                {experience.works.map((work, index) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -66,11 +71,11 @@ const Skills = () => {
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
-                      key={work.name}
+                      key={'C' + index}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
-                      <p className="p-text">{work.description}</p>
+                      {/*<p className="p-text">{work.description}</p>*/}
                     </motion.div>
                     <ReactTooltip
                       id={work.name}
