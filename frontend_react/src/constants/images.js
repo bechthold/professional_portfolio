@@ -5,6 +5,8 @@ import java from '../assets/java.png';
 import node from '../assets/node.png';
 import react from '../assets/react.png';
 import about from '../assets/about.png';
+import email from '../assets/email.png';
+import mobile from '../assets/mobile.png';
 
 export default {
   logo,
@@ -13,5 +15,7 @@ export default {
   java,
   node,
   react,
-  about
+  about,
+  email,
+  mobile,
 }
